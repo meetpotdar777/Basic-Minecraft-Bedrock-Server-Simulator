@@ -1,10 +1,13 @@
 Basic Minecraft Bedrock Server Simulator (Python)
+
 This Python script is a simulator for a Minecraft Bedrock Edition server. Its primary purpose is to demonstrate fundamental network communication principles, basic server-side state management, and the integration of AI-driven responses, all within the context of the Minecraft Bedrock protocol's initial handshake phases.
 
 IMPORTANT DISCLAIMER:
+
 This is NOT a fully functional, playable Minecraft Bedrock Edition server. It handles initial network pings and parts of the connection handshake, allowing it to appear in your Minecraft client's server list. However, it does not implement the vast and complex game logic required for actual gameplay (e.g., world generation, physics, player movement, block interactions, inventory, etc.). When you attempt to "join" the simulated server from your Minecraft client, you will still encounter an "Unable to connect to world" error, which is the expected behavior.
 
 Features
+
 Network Discovery: Responds to "Unconnected Ping" (0x01) packets, allowing the simulator to be discovered and listed in your Minecraft Bedrock client's "Friends" or "Servers" tab.
 
 Initial Handshake Simulation: Handles "Open Connection Request 1" (0x05) and "Open Connection Request 2" (0x07) packets, sending back their respective replies (0x06 and 0x08), simulating the initial steps of a connection.
@@ -28,6 +31,7 @@ Basic Acknowledgment (ACK) Simulation: Sends simplified RakNet ACK packets (0xC0
 Structured Logging: Uses Python's logging module for clearer console output.
 
 How to Run the Simulator
+
 Save the Script: Save the provided Python code as mcpe_server.py (or any .py extension) on your computer.
 
 Open a Terminal/Command Prompt: Navigate to the directory where you saved the file.
@@ -70,6 +74,7 @@ However, after these initial steps, your Minecraft client will display "Unable t
 In your terminal running the Python script, you will see logs indicating when clients attempt to connect, which handshake packets are exchanged, and AI responses to simulated player "play data."
 
 Why It's Not "Fully Functional"
+
 Creating a fully playable Minecraft Bedrock server from scratch is an undertaking of immense complexity:
 
 RakNet Protocol: The underlying network protocol (RakNet) is highly sophisticated, involving custom reliability, ordering, and session management over UDP, including encryption. This is a network stack in itself.
